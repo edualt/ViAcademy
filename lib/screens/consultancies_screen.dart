@@ -4,14 +4,14 @@ import 'package:academy/widgets/library_items_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Library extends StatefulWidget {
-  const Library({super.key});
+class Consultancies extends StatefulWidget {
+  const Consultancies({super.key});
 
   @override
-  State<Library> createState() => _LibraryState();
+  State<Consultancies> createState() => _ConsultanciesState();
 }
 
-class _LibraryState extends State<Library> {
+class _ConsultanciesState extends State<Consultancies> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +26,6 @@ class _LibraryState extends State<Library> {
           ],
         ),
       ),
-      bottomNavigationBar: const HomeBottomBar(),
     );
   }
 }

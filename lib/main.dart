@@ -1,8 +1,12 @@
 import 'package:academy/screens/cart_screen.dart';
 import 'package:academy/screens/home_screen.dart';
-import 'package:academy/screens/library_screen.dart';
+import 'package:academy/screens/consultancies_screen.dart';
+import 'package:academy/screens/login_screen.dart';
+import 'package:academy/screens/register_screen.dart';
 import 'package:academy/screens/search_screen.dart';
+import 'package:academy/screens/welcome_screen.dart';
 import 'package:academy/utils/theme/theme.dart';
+import 'package:academy/widgets/home_bottom_bar_widget.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,10 +21,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: TAppTheme.lightTheme,
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      // home: const Library(),
-      // home: const Cart(),
-      // home: const Search()
+      initialRoute: '/welcome',
+      routes: {
+        '/welcome': (context) => const Welcome(),
+        '/login': (context) => const Login(),
+        '/register': (context) => const Register(),
+        '/home': (context) => const MyHomePage(),
+        '/search': (context) => const Search(),
+        '/library': (context) => const Consultancies(),
+        '/cart': (context) => const Cart(),
+      },
+      home: const HomeBottomBar(),
     );
   }
 }

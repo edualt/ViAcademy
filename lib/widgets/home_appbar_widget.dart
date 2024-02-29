@@ -1,3 +1,4 @@
+import 'package:academy/screens/cart_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +17,7 @@ class HomeAppBar extends StatelessWidget {
     return AppBar(
       surfaceTintColor: Colors.grey,
       backgroundColor: Colors.white,
+      automaticallyImplyLeading: false,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -50,11 +52,15 @@ class HomeAppBar extends StatelessWidget {
       ),
       actions: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            _navigateToPage(context, '/search');
+          },
           icon: const Icon(Icons.search),
         ),
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            _navigateToPage(context, Cart.routeName);
+          },
           icon: const Icon(Icons.shopping_cart_outlined),
         ),
         IconButton(
@@ -63,5 +69,11 @@ class HomeAppBar extends StatelessWidget {
         ),
       ],
     );
+  }
+}
+
+void _navigateToPage(BuildContext context, String routeName) {
+  if (ModalRoute.of(context)!.settings.name != routeName) {
+    Navigator.of(context).pushNamed(routeName);
   }
 }

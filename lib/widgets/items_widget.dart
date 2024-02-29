@@ -1,5 +1,7 @@
+import 'package:academy/screens/watch_course_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class ItemsWidget extends StatelessWidget {
   const ItemsWidget({Key? key});
@@ -22,13 +24,22 @@ class ItemsWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                width: double.infinity,
-                height: 119,
-                decoration: BoxDecoration(
-                  color: Colors.grey.withOpacity(0.3),
-                  borderRadius: BorderRadius.circular(10),
-                  // image: const DecorationImage(image: image),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => WatchCourseScreen()),
+                    );
+                },
+                child: Container(
+                  width: double.infinity,
+                  height: 119,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.withOpacity(0.3),
+                    borderRadius: BorderRadius.circular(10),
+                    // image: const DecorationImage(image: image),
+                  ),
                 ),
               ),
               const SizedBox(
