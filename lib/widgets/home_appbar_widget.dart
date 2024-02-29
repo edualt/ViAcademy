@@ -2,9 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeAppBar extends StatelessWidget {
+  final String? greetingText;
+  final String welcomeText;
+
   const HomeAppBar({
-    super.key,
-  });
+    Key? key,
+    this.greetingText,
+    required this.welcomeText,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,15 +26,16 @@ class HomeAppBar extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    if (greetingText != null) // Verificar si greetingText no es nulo
+                      Text(
+                        greetingText!,
+                        style: Theme.of(context)
+                            .textTheme
+                            .labelLarge!
+                            .apply(color: Colors.black),
+                      ),
                     Text(
-                      "Hola Jose",
-                      style: Theme.of(context)
-                          .textTheme
-                          .labelLarge!
-                          .apply(color: Colors.black),
-                    ),
-                    Text(
-                      "Bienvenido a ViAcademy",
+                      welcomeText,
                       style: Theme.of(context)
                           .textTheme
                           .titleLarge!

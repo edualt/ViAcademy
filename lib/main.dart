@@ -1,4 +1,7 @@
-import 'package:academy/screens/home.dart';
+import 'package:academy/screens/cart_screen.dart';
+import 'package:academy/screens/home_screen.dart';
+import 'package:academy/screens/library_screen.dart';
+import 'package:academy/screens/search_screen.dart';
 import 'package:academy/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -14,8 +17,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: TAppTheme.lightTheme,
-      darkTheme: TAppTheme.darkTheme,
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      // home: const Library(),
+      // home: const Cart(),
+      // home: const Search()
     );
   }
 }
