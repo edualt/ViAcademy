@@ -31,7 +31,6 @@ class MyApp extends StatelessWidget {
         '/library': (context) => const Consultancies(),
         '/cart': (context) => const Cart(),
       },
-      home: const HomeBottomBar(),
     );
   }
 }
